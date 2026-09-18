@@ -56,13 +56,22 @@ Example:
 
 GET `/anomalies`
 
-## Example Questions
+## Example Questions and Outputs
 
-- How many tickets are currently open?
-- Which agent resolved the most tickets?
-- What is the average customer rating for Technical category tickets?
-- Show me all Critical tickets not resolved within 12 hours.
-- Are there any anomalies in resolution times?
+### 1. How many tickets are currently open?
+Output: 111 open tickets.
+
+### 2. Which agent resolved the most tickets this month?
+Output: AGT-01 resolved 16 tickets.
+
+### 3. What is the average customer rating for Technical category tickets?
+Output: 3.74.
+
+### 4. Show me all Critical tickets not resolved within 12 hours.
+Output: 34 tickets match the condition.
+
+### 5. Are there any anomalies in resolution times this week?
+Output: 14 anomalies detected.
 
 ## Technology
 
@@ -132,6 +141,5 @@ AI_Engineer_Assessment/
 - run.py
 - requirements.txt
 - README.md
-- .env
 - .gitignore
 - exploration.ipynb
