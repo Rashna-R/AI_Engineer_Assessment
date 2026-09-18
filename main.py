@@ -26,7 +26,16 @@ def get_average_rating(category=None):
 
 
 def get_top_resolving_agent():
-    resolved = df[df["status"] == "Resolved"]
+    latest_date = df["created_at"].max()
+    month_start = latest_date.replace(
+        day=1, hour=0, minute=0, second=0, microsecond=0
+    )
+
+    resolved = df[
+        (df["status"] == "Resolved") &
+        (df["created_at"] >= month_start) &
+        (df["created_at"] <= latest_date)
+    ]
 
     result = (
         resolved.groupby("agent_id")
